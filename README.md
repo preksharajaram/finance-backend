@@ -1,31 +1,29 @@
 # Finance Backend API
 
-A backend REST API built using FastAPI for managing user data with full CRUD operations.
-
----
+A FastAPI-based backend application that provides CRUD operations for managing users. This project demonstrates REST API development, database integration, and validation handling using modern Python tools.
 
 ## 🚀 Features
 
 - Create User
-- Get All Users
 - Get User by ID
+- Search Users by Name
 - Update User
 - Delete User
-
----
+- Unique Email Validation
+- SQLite Database Integration
+- Swagger UI for API testing
 
 ## 🛠️ Tech Stack
 
+- Python
 - FastAPI
 - SQLAlchemy
 - SQLite
-- Pydantic
 - Uvicorn
-
----
 
 ## 📂 Project Structure
 
+```
 finance-backend/
 │── main.py
 │── models.py
@@ -33,49 +31,65 @@ finance-backend/
 │── crud.py
 │── database.py
 │── requirements.txt
-│── README.md
+│── finance.db
+```
 
----
+## ⚙️ Setup Instructions
 
-## ⚙️ Installation & Setup
+1. Clone the repository:
 
-git clone https://github.com/preksharajaram/finance-backend.git  
-cd finance-backend  
-pip install -r requirements.txt  
+```bash
+git clone https://github.com/YOUR-USERNAME/finance-backend.git
+cd finance-backend
+```
 
----
+2. Create virtual environment:
 
-## ▶️ Run the Server
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the server:
+
+```bash
 uvicorn main:app --reload
+```
 
----
+5. Open Swagger UI:
+
+```
+http://127.0.0.1:8000/docs
+```
 
 ## 📌 API Endpoints
 
-GET    /users          → Get all users  
-GET    /users/{id}     → Get user by ID  
-POST   /users          → Create new user  
-PUT    /users/{id}     → Update user  
-DELETE /users/{id}     → Delete user  
+| Method | Endpoint | Description |
+|--------|---------|------------|
+| POST | /users | Create user |
+| GET | /users/{user_id} | Get user |
+| GET | /users/search | Search users |
+| PUT | /users/{user_id} | Update user |
+| DELETE | /users/{user_id} | Delete user |
 
----
+## ⚠️ Notes
 
-## 📷 API Testing
+- Email field is unique
+- Duplicate emails will throw an error
+- SQLite database is used for simplicity
 
-Open in browser:  
-http://127.0.0.1:8000/docs  
+## 🎯 Future Improvements
 
----
-
-## ✨ Future Improvements
-
-- Authentication (JWT)
-- Search functionality
-- Pagination
-- Deployment
-
----
+- Add authentication (JWT)
+- Deploy on cloud (Render / AWS)
+- Add pagination
+- Add frontend integration
 
 ## 👩‍💻 Author
 
