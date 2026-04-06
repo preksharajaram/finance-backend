@@ -44,7 +44,7 @@ finance-backend/
 
 1. Clone the repository:
 
-git clone https://github.com/YOUR-USERNAME/finance-backend.git  
+git clone (https://github.com/preksharajaram/finance-backend.git) 
 cd finance-backend  
 
 2. Create virtual environment:
